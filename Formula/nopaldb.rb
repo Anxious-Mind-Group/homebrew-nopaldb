@@ -9,11 +9,10 @@ class Nopaldb < Formula
   depends_on "rust" => :build
 
   def install
-    cd "ndbstudio" do
-      system "cargo", "install", *std_cargo_args
-    end
-    cd "nopaldb-mcp" do
-      system "cargo", "install", *std_cargo_args
+    %w[ndbstudio nopaldb-mcp].each do |crate|
+      cd crate do
+        system "cargo", "install", *std_cargo_args
+      end
     end
   end
 
