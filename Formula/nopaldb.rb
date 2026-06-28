@@ -9,11 +9,12 @@ class Nopaldb < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release", "--locked", "--features", "nopaldb/core",
-           "-p", "ndbstudio", "-p", "nopaldb-mcp"
-
-    bin.install "target/release/ndbstudio"
-    bin.install "target/release/nopaldb-mcp"
+    cd "ndbstudio" do
+      system "cargo", "install", *std_cargo_args
+    end
+    cd "nopaldb-mcp" do
+      system "cargo", "install", *std_cargo_args
+    end
   end
 
   def caveats
