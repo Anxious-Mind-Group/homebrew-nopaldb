@@ -9,21 +9,11 @@ class Nopaldb < Formula
   depends_on "rust" => :build
 
   def install
-    # NDStudio — Interactive TUI explorer + web workbench
-    # Default features include "web" for the local workbench server.
-    # The crate depends on nopaldb with features=["core"].
-    system "cargo", "install", "--locked", "--root", prefix,
-           "--path", "ndbstudio"
+    system "cargo", "build", "--release", "--locked", "--features", "nopaldb/core",
+           "-p", "ndbstudio", "-p", "nopaldb-mcp"
 
-    # NopalDB MCP — Model Context Protocol server for AI agents
-    # The crate depends on nopaldb with its own feature set
-    # (storage-sled, algorithms, embeddings-index, reasoner).
-    system "cargo", "install", "--locked", "--root", prefix,
-           "--path", "nopaldb-mcp"
-
-    # Remove cargo metadata that gets installed alongside binaries
-    rm_r(prefix/".crates.toml")
-    rm_r(prefix/".crates2.json")
+    bin.install "target/release/ndbstudio"
+    bin.install "target/release/nopaldb-mcp"
   end
 
   def caveats
