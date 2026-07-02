@@ -5,8 +5,7 @@ Homebrew tap for [NopalDB](https://github.com/sharop/nopaldb) — a high-perform
 ## Installation
 
 ```bash
-brew tap sharop/nopaldb
-brew install nopaldb
+brew install Anxious-Mind-Group/nopaldb/nopaldb
 ```
 
 This installs two binaries:
@@ -54,7 +53,7 @@ The formula compiles both binaries from source using the Rust toolchain. Build t
 
 ```bash
 brew update
-brew upgrade nopaldb
+brew upgrade Anxious-Mind-Group/nopaldb/nopaldb
 ```
 
 ## License
