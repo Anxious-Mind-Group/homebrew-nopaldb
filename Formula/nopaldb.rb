@@ -1,8 +1,8 @@
 class Nopaldb < Formula
   desc "High-performance graph database with TUI explorer and MCP server"
   homepage "https://github.com/sharop/nopaldb"
-  url "https://github.com/sharop/nopaldb/archive/refs/tags/v0.4.30.tar.gz"
-  sha256 "c67f7bf887bebcc1b98483b449887728518de68b46b579b73156c9492f6a87af"
+  url "https://github.com/sharop/nopaldb/archive/refs/tags/v0.4.31.tar.gz"
+  sha256 "5ca12af5ef91125424a651e8a46812316379066f15c886a29794412ab750db0f"
   license "AGPL-3.0-only"
   head "https://github.com/sharop/nopaldb.git", branch: "main"
 
